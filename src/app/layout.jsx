@@ -6,6 +6,11 @@ export const metadata = {
   title: "Vyranza | Enterprise Digital Marketing Agency & Paid Ads",
   description:
     "Vyranza is a performance marketing agency specializing in high-converting Meta Ads, Google Ads, SEO, and web development.",
+  icons: {
+    icon: "/logo/icon_logo.png",
+    shortcut: "/logo/icon_logo.png",
+    apple: "/logo/icon_logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {
