@@ -27,6 +27,11 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
   return (
     <header
       className={cn(
@@ -39,7 +44,11 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Main Long Brand Logo */}
-          <Link href="/" className="inline-flex items-center group overflow-visible">
+          <Link
+            href="/"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="inline-flex items-center group overflow-visible"
+          >
             <motion.div
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
@@ -162,6 +171,7 @@ export default function Header() {
                     >
                       <Link
                         href={link.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
                         className="relative block overflow-hidden"
                       >
                         {isActive && (
@@ -197,6 +207,7 @@ export default function Header() {
                 >
                   <Link
                     href="/contact"
+                    onClick={() => setIsMobileMenuOpen(false)}
                     className="flex items-center justify-center gap-2 w-full bg-royal hover:bg-royal-dark text-white text-sm font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-md shadow-royal/20"
                   >
                     <span>Get Started</span>

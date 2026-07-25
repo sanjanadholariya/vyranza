@@ -156,7 +156,7 @@ export default function ContactPage() {
                   </p>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* First & Last Name */}
+                    {/* First Name & Last Name */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
@@ -169,7 +169,7 @@ export default function ContactPage() {
                           onChange={(e) =>
                             setFormData({ ...formData, firstName: e.target.value })
                           }
-                          placeholder="e.g. Sanjana"
+                          placeholder="e.g. John"
                           className="w-full px-4 py-3 rounded-xl border border-sky-200/80 bg-white text-foreground placeholder:text-muted-foreground/60 text-sm focus:outline-none focus:ring-2 focus:ring-royal/30 focus:border-royal transition-all"
                         />
                       </div>
@@ -184,7 +184,7 @@ export default function ContactPage() {
                           onChange={(e) =>
                             setFormData({ ...formData, lastName: e.target.value })
                           }
-                          placeholder="e.g. Sharma"
+                          placeholder="e.g. Doe"
                           className="w-full px-4 py-3 rounded-xl border border-sky-200/80 bg-white text-foreground placeholder:text-muted-foreground/60 text-sm focus:outline-none focus:ring-2 focus:ring-royal/30 focus:border-royal transition-all"
                         />
                       </div>
@@ -203,7 +203,7 @@ export default function ContactPage() {
                           onChange={(e) =>
                             setFormData({ ...formData, email: e.target.value })
                           }
-                          placeholder="sanjana@company.com"
+                          placeholder="john@company.com"
                           className="w-full px-4 py-3 rounded-xl border border-sky-200/80 bg-white text-foreground placeholder:text-muted-foreground/60 text-sm focus:outline-none focus:ring-2 focus:ring-royal/30 focus:border-royal transition-all"
                         />
                       </div>
@@ -261,7 +261,7 @@ export default function ContactPage() {
                     {/* Message Textarea */}
                     <div>
                       <label className="block text-xs font-bold uppercase tracking-wider text-foreground mb-2">
-                        Message / Campaign Goals (Optional)
+                        Message / Campaign Goals
                       </label>
                       <textarea
                         rows={4}
