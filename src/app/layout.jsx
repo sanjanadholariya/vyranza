@@ -57,7 +57,7 @@ export const metadata = {
     apple: "/logo/icon_logo.png",
   },
   verification: {
-    google: "LNJ4K73fulhzVpjxZaYl0cxjUG56Qx3zarMm2sZKPHU",
+    google: ["dP_1XOw9AawEXp3ywPMtoZUDm41pXekbylitkQu5_cI", "LNJ4K73fulhzVpjxZaYl0cxjUG56Qx3zarMm2sZKPHU"],
   },
 };
 
