@@ -27,7 +27,7 @@ export default function TermsOfServicePage() {
       content: (
         <>
           <p className="mb-4">
-            These Terms of Service ("Terms") constitute a legally binding agreement between Vyranza ("Agency," "we," "us," or "our") and you, whether individually or on behalf of an entity ("Client," "you," or "your"). These Terms govern your access to and use of the Vyranza website (https://vyranza.com), strategy consultations, and marketing services.
+            These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement between Vyranza (&quot;Agency,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) and you, whether individually or on behalf of an entity (&quot;Client,&quot; &quot;you,&quot; or &quot;your&quot;). These Terms govern your access to and use of the Vyranza website (https://vyranza.com), strategy consultations, and marketing services.
           </p>
           <p>
             By booking a strategy call, executing a service agreement, or using our website, you agree to be bound by these Terms in full. If you do not agree with any part of these Terms, you must not access our website or engage our services.
@@ -82,7 +82,7 @@ export default function TermsOfServicePage() {
         <>
           <ul className="list-disc pl-6 space-y-3 text-foreground/80">
             <li>
-              <strong>Direct Media Billing:</strong> Ad spend budgets are paid directly by the Client to advertising networks (Meta, Google, etc.) using the Client's registered credit card or payment method within their respective ad accounts. Agency management fees DO NOT include media ad spend.
+              <strong>Direct Media Billing:</strong> Ad spend budgets are paid directly by the Client to advertising networks (Meta, Google, etc.) using the Client&apos;s registered credit card or payment method within their respective ad accounts. Agency management fees DO NOT include media ad spend.
             </li>
             <li>
               <strong>Management Fees &amp; Retainers:</strong> Agency management fees are billed in advance on a recurring monthly retainer or project basis as agreed upon in the individual Client Service Agreement.
@@ -132,7 +132,7 @@ export default function TermsOfServicePage() {
             <li>Business interruption, loss of profits, or revenues resulting from advertising campaigns.</li>
           </ul>
           <p className="text-xs text-muted-foreground">
-            In no event shall Vyranza's aggregate total financial liability exceed the total management fee amount paid by the Client to Vyranza in the 30 days prior to the event giving rise to liability.
+            In no event shall Vyranza&apos;s aggregate total financial liability exceed the total management fee amount paid by the Client to Vyranza in the 30 days prior to the event giving rise to liability.
           </p>
         </>
       ),
@@ -235,10 +235,9 @@ export default function TermsOfServicePage() {
             return (
               <motion.div
                 key={section.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
                 className="p-8 rounded-2xl bg-white border border-sky-100 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="flex items-center gap-3 mb-5">
@@ -260,10 +259,9 @@ export default function TermsOfServicePage() {
 
         {/* CTA Footer Card */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-16 p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-royal via-royal-light to-sky-600 text-white text-center shadow-xl relative overflow-hidden"
         >
           <div className="relative z-10 max-w-xl mx-auto space-y-4">

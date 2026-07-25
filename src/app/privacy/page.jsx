@@ -26,7 +26,7 @@ export default function PrivacyPolicyPage() {
       content: (
         <>
           <p className="mb-4">
-            Vyranza ("we," "our," or "us") is dedicated to protecting the privacy and personal information of our clients, prospective partners, and website visitors. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, submit a inquiry, or utilize our paid media management and advertising growth services.
+            Vyranza (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is dedicated to protecting the privacy and personal information of our clients, prospective partners, and website visitors. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, submit an inquiry, or utilize our paid media management and advertising growth services.
           </p>
           <p>
             By accessing or using our website and services, you acknowledge that you have read, understood, and agree to the data practices described in this Privacy Policy.
@@ -270,10 +270,9 @@ export default function PrivacyPolicyPage() {
             return (
               <motion.div
                 key={section.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
                 className="p-8 rounded-2xl bg-white border border-sky-100 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="flex items-center gap-3 mb-5">
@@ -295,10 +294,9 @@ export default function PrivacyPolicyPage() {
 
         {/* CTA Footer Card */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-16 p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-royal via-royal-light to-sky-600 text-white text-center shadow-xl relative overflow-hidden"
         >
           <div className="relative z-10 max-w-xl mx-auto space-y-4">
