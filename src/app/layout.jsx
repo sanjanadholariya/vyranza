@@ -56,6 +56,9 @@ export const metadata = {
     shortcut: "/logo/icon_logo.png",
     apple: "/logo/icon_logo.png",
   },
+  verification: {
+    google: "LNJ4K73fulhzVpjxZaYl0cxjUG56Qx3zarMm2sZKPHU",
+  },
 };
 
 const jsonLd = {
