@@ -1,0 +1,21 @@
+export default function sitemap() {
+  const baseUrl = "https://vyranza.com";
+
+  const routes = [
+    "",
+    "/services",
+    "/faq",
+    "/contact",
+    "/pricing",
+    "/privacy",
+    "/terms",
+    "/blog",
+  ];
+
+  return routes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date().toISOString().split("T")[0],
+    changeFrequency: route === "" ? "daily" : "weekly",
+    priority: route === "" ? 1.0 : 0.8,
+  }));
+}

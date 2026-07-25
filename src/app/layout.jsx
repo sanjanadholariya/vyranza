@@ -3,9 +3,54 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Vyranza | Enterprise Digital Marketing Agency & Paid Ads",
+  metadataBase: new URL("https://vyranza.com"),
+  title: {
+    default: "Vyranza | Performance Marketing Agency & Paid Ads",
+    template: "%s | Vyranza",
+  },
   description:
-    "Vyranza is a performance marketing agency specializing in high-converting Meta Ads, Google Ads, SEO, and web development.",
+    "Vyranza is a performance digital marketing agency specializing in high-converting Meta Ads (Facebook & Instagram), Google Ads, Conversion Remarketing, and CRM automation.",
+  keywords: [
+    "Vyranza",
+    "Vyranza Agency",
+    "Vyranza Marketing",
+    "Vyranza Digital",
+    "Meta Ads Agency",
+    "Google Ads Management",
+    "Performance Marketing Agency",
+    "SMMA",
+  ],
+  authors: [{ name: "Vyranza", url: "https://vyranza.com" }],
+  creator: "Vyranza",
+  publisher: "Vyranza",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "Vyranza | Performance Marketing Agency & Paid Ads",
+    description:
+      "Scale your revenue with Vyranza's high-converting Meta Ads, Google Ads, and automated lead acquisition funnels.",
+    url: "https://vyranza.com",
+    siteName: "Vyranza",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vyranza | Performance Marketing Agency",
+    description:
+      "Scale your revenue with Vyranza's high-converting Meta Ads & Google Ads.",
+  },
   icons: {
     icon: "/logo/icon_logo.png",
     shortcut: "/logo/icon_logo.png",
@@ -13,9 +58,30 @@ export const metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Vyranza",
+  url: "https://vyranza.com",
+  logo: "https://vyranza.com/logo/long_bg_remove.png",
+  description:
+    "Performance digital marketing agency specializing in Meta Ads, Google Ads, and CRM lead automation.",
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "hello@vyranza.com",
+    contactType: "customer service",
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="antialiased min-h-screen flex flex-col justify-between">
         <Header />
         <main className="grow">{children}</main>
