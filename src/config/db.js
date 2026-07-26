@@ -1,10 +1,6 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/vyranza";
-
-if (!MONGODB_URI) {
-  throw new Error("Please define the MONGODB_URI environment variable inside .env.local");
-}
+const MONGODB_URI = process.env.MONGODB_URI;
 
 /**
  * Global is used here to maintain a cached connection across hot reloads
@@ -17,6 +13,12 @@ if (!cached) {
 }
 
 export async function connectDatabase() {
+  const uriToUse = MONGODB_URI || (process.env.NODE_ENV === "development" ? "mongodb://localhost:27017/vyranza" : null);
+
+  if (!uriToUse) {
+    throw new Error("MONGODB_URI environment variable is missing. Please add MONGODB_URI to your Vercel / server environment variables.");
+  }
+
   if (cached.conn) {
     return cached.conn;
   }
@@ -26,7 +28,7 @@ export async function connectDatabase() {
       bufferCommands: false,
     };
 
-    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongooseInstance) => {
+    cached.promise = mongoose.connect(uriToUse, opts).then((mongooseInstance) => {
       return mongooseInstance;
     });
   }
