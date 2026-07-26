@@ -1,6 +1,7 @@
 import { successResponse, errorResponse } from "@/utils/apiResponse";
 import { connectDatabase } from "@/config/db";
 import { Contact } from "@/models/Contact";
+import { formatISTTimestamp } from "@/utils/formatDate";
 
 export async function GET() {
   try {
@@ -22,7 +23,7 @@ export async function GET() {
           headers: { "Content-Type": "text/plain" },
           redirect: "follow",
           body: JSON.stringify({
-            timestamp: contact.createdAt ? contact.createdAt.toISOString() : new Date().toISOString(),
+            timestamp: formatISTTimestamp(contact.createdAt || new Date()),
             firstName: contact.firstName || "",
             lastName: contact.lastName || "",
             email: contact.email || "",

@@ -1,6 +1,7 @@
 import { successResponse, errorResponse } from "@/utils/apiResponse";
 import { connectDatabase } from "@/config/db";
 import { Contact } from "@/models/Contact";
+import { formatISTTimestamp } from "@/utils/formatDate";
 
 export async function POST(req) {
   try {
@@ -47,7 +48,7 @@ export async function POST(req) {
           headers: { "Content-Type": "text/plain" },
           redirect: "follow",
           body: JSON.stringify({
-            timestamp: new Date().toISOString(),
+            timestamp: formatISTTimestamp(new Date()),
             firstName,
             lastName,
             email,
