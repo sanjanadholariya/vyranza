@@ -83,13 +83,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <GoogleAnalytics />
-        <MetaPixel />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className="antialiased min-h-screen flex flex-col justify-between">
+        <MetaPixel />
+
         <Header />
         <main className="grow">{children}</main>
         <Footer />
