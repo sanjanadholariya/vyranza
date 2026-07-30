@@ -72,6 +72,12 @@ export default function ContactPage() {
       }
 
       setIsSubmitted(true);
+
+      // Notify Google Tag Manager that a lead was generated
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "generate_lead",
+      });
     } catch (err) {
       console.error("Form submission error:", err);
       setErrorMessage(err.message || "An unexpected error occurred. Please try again.");
@@ -237,14 +243,14 @@ export default function ContactPage() {
                               key={idx}
                               onClick={() => handleCheckboxChange(service)}
                               className={`flex items-center gap-3 p-3.5 rounded-xl border cursor-pointer select-none transition-all duration-200 ${isChecked
-                                  ? "bg-sky-100/90 border-royal text-royal font-semibold shadow-sm"
-                                  : "bg-sky-50/30 border-sky-200/80 text-foreground/80 hover:bg-sky-50"
+                                ? "bg-sky-100/90 border-royal text-royal font-semibold shadow-sm"
+                                : "bg-sky-50/30 border-sky-200/80 text-foreground/80 hover:bg-sky-50"
                                 }`}
                             >
                               <div
                                 className={`w-5 h-5 rounded-md border flex items-center justify-center transition-colors ${isChecked
-                                    ? "bg-royal border-royal text-white"
-                                    : "border-sky-300 bg-white"
+                                  ? "bg-royal border-royal text-white"
+                                  : "border-sky-300 bg-white"
                                   }`}
                               >
                                 {isChecked && <CheckCircle2 className="w-3.5 h-3.5" />}
