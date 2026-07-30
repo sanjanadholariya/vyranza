@@ -2,7 +2,6 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
-import MetaPixel from "@/components/analytics/MetaPixel";
 import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata = {
@@ -91,7 +90,6 @@ export default function RootLayout({ children }) {
       </head>
       <body className="antialiased min-h-screen flex flex-col justify-between">
         <GoogleTagManager gtmId="GTM-KG6F969P" />
-        <MetaPixel />
 
         <Header />
         <main className="grow">{children}</main>
